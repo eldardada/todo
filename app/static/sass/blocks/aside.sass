@@ -1,0 +1,90 @@
+.aside
+    padding: 60px 25px
+    background-color:#E6E6E6
+    min-height: calc(100vh - 202px)
+    user-select: none
+    +md-block
+        z-index: 100
+        position: absolute
+        width: 81.25%
+        min-height: calc(100% + 22px)
+        transform: translateX(-1000px)
+        transition: transform .3s
+    &__list-type
+        margin-bottom: 20px
+    &.active
+        transform: translateX(0)
+
+    &.active ~ .overlay
+        opacity: 1
+        visibility: visible
+.overlay
+    position: absolute
+    background-color: rgba(0,0,0,0.4)
+    min-height: calc(100vh - 82px)
+    width: 100%
+    opacity: 0
+    visibility: hidden
+    transition: opacity .3s
+    +md-block
+        height: 927px
+.list-type
+    > li
+        padding: 10px 0
+    &__check
+        display: flex
+        align-items: center
+        cursor: pointer
+        input
+            position: absolute
+            appearance: none
+            &:focus
+                outline: none
+            &::after
+                content: ''
+                display: block
+                box-sizing: border-box
+                width: 24px
+                height: 24px
+                border-radius: 24px
+                border: 1px solid #333
+            &:checked
+                &::after
+                    border: none
+                    content: url(static/img/checkbox-active.svg)
+        strong
+            margin-left: 35px
+
+.aside-priority
+    &__title
+        cursor: pointer
+        font-weight: 500
+        font-size: 18px
+        line-height: 21px
+        padding: 10px 0
+        border-bottom: 1px solid #C4C4C4
+        > svg
+            transition: transform .3s
+            transform: rotate(180deg)
+            transform-origin: 50% 50%
+            vertical-align: middle
+    &__nested
+        font-size: 18px
+        transform: scaleY(0)
+        transform-origin: top left
+        transition: transform .3s
+        margin-left: 25px
+        li
+            cursor: pointer
+            padding: 10px 0
+            transition: color .3s
+            &:hover
+                color: var(--color-orange)
+    &.active
+        .aside-priority__nested
+            transform: scaleY(1)
+        svg
+            transform: rotate(0deg)
+       
+                
+    

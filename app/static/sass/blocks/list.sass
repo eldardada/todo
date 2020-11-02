@@ -1,0 +1,77 @@
+.todo
+    &-list
+        width: 100%
+        text-align: left
+    &__row
+        > td, th
+            padding: 20px 0
+            vertical-align: middle
+            &:last-child
+                text-align: right
+        th
+            font-weight: 500
+            font-size: 18px
+        &:not(:last-child)
+            border-bottom: 1px solid #C4C4C4
+    &-task
+        display: flex
+        cursor: pointer
+        user-select: none
+        input
+            position: absolute
+            appearance: none
+            &:focus
+                outline: none
+            &::after
+                content: ''
+                cursor: pointer
+                display: block
+                box-sizing: border-box
+                width: 24px
+                height: 24px
+                border-radius: 24px
+                border: 3px solid #333
+            &:checked
+                &::after
+                    border: none
+                    content: url(static/img/checkbox-active.svg)
+            + span
+                margin-top: 30px
+                width: 24px
+                height: 8px
+                background-color: #EB5757
+                border-radius: 4px
+        &__text
+            margin-left: 20px
+
+    &-check
+        display: flex
+        flex-direction: column
+        align-items: center
+
+.pen
+    width: 20px
+    height: 20px
+    cursor: pointer
+    transition: fill .3s
+    &:hover
+        fill: var(--color-orange)
+
+.todo-task
+    &__title
+        display: inline-block
+        font-weight: 500
+        font-size: 18px
+        margin-bottom: 10px
+        &::after
+            content: ''
+            display: block
+            background-color: var(--color-black)
+            height: 1px
+            width: 100%
+    &__subtitle
+        font-size: 14px
+        color: #828282
+
+
+

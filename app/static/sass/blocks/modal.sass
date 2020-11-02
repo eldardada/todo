@@ -1,0 +1,40 @@
+.modal
+    display: flex
+    // visibility: hidden
+    position: fixed
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 0px  
+    z-index: 1000
+    overflow: auto
+    padding: 10px
+    &-content
+        position: relative
+        width: 1120px
+        max-width: 80%
+        grid-gap: 20px
+        border-radius: 20px
+        background-color: var(--color-white)
+        padding: 20px 40px
+        margin: auto auto
+        +sm-block
+            padding: 15px
+    &-form
+        display: grid
+        grid-template-columns: repeat(1fr, 3)
+        grid-template-rows: repeat(1fr, 3)
+        grid-row-gap: 10px
+        &__name
+            grid-column: 1/4
+        &__priority, &__mark, &__deadline
+            grid-row: 2/3
+        &__desc
+            grid-row: 3/4
+            grid-column: 1/3
+    &__title
+        text-align: center
+        font-size: 36px
+
+
+

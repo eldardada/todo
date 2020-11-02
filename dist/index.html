@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo</title>
+</head>
+<body>
+    <header class="header">
+    <div class="container header__container">
+        <h1>To-Do List</h1>
+        <div class="header__add add">
+            <svg class="plus">
+                <use xlink:href="./static/img/svg/sprite.svg#plus"></use>
+            </svg>
+        </div>
+    </div>
+</header>
+    <main class="main">
+        <div class="container main__content">
+            <aside class="aside ">
+    <ul class="aside__list-type list-type">
+        <li>
+            <label class="list-type__check">
+                <input type="checkbox">
+                <strong>Новые</strong>
+            </label>
+        </li>
+         <li>
+            <label class="list-type__check">
+                <input type="checkbox">
+                <strong>Выполненные</strong>
+            </label>
+        </li>
+         <li>
+            <label class="list-type__check">
+                <input type="checkbox">
+                <strong>Все</strong>
+            </label>
+        </li>
+    </ul>
+    <ul class="aside__list-priority aside-priority active" data-nested="">
+        <p class="aside-priority__title"> 
+            <svg class="arrow_down">
+                <use xlink:href="./static/img/svg/sprite.svg#arrow_down"></use>
+            </svg>
+            <span data-title="Приоритет">Приоритет</span>
+        </p>
+        <ul class="aside-priority__nested">
+            <li>Высокий</li>
+            <li>Средний</li>
+            <li>Низкий</li>
+        </ul>
+    </ul>
+    
+</aside>
+            <section class="section">
+                <div class="section__content">
+                    <div class="task">
+    <div class="task-header">
+        <div class="task-header__left">
+            <button class="back task__back">
+                <svg class="arrow_left">
+                    <use xlink:href="./static/img/svg/sprite.svg#arrow_left"></use>
+                </svg>
+            </button>
+            <h2 class="title task__title">Сходить в магазин</h2>
+        </div>
+        <div class="task-header__right">
+            <button class="main-btn">
+                <svg class="main-btn__svg check_mark">
+                    <use xlink:href="./static/img/svg/sprite.svg#checkbox-active"></use>
+                </svg>
+                <span>Выполнена</span>
+            </button>
+            <button class="main-btn">
+                <svg class="main-btn__svg check_mark">
+                    <use xlink:href="./static/img/svg/sprite.svg#basket"></use>
+                </svg>
+                <span>Выполнена</span>
+            </button>
+            <button class="main-btn">
+                <svg class="main-btn__svg check_mark">
+                    <use xlink:href="./static/img/svg/sprite.svg#pen"></use>
+                </svg>
+                <span>Выполнена</span>
+            </button>
+        </div>
+    </div>
+    <div class="task-info">
+        <div class="task-info__block">
+            <small>Статус задачи</small>
+            <strong>Выполнена</strong>
+        </div>
+        <div class="task-info__block">
+            <small>Приоритет</small>
+            <strong>Высокий</strong>
+        </div>
+        <div class="task-info__block">
+            <small>Дедлайн</small>
+            <strong><time datetime="2020-09-29 18:32">29.09.2020, 18:32</time></strong>
+        </div>
+        <div class="task-info__block">
+            <small>Метка</small>
+            <span class="block-color_sm" data-color="#F2C94C"></span>
+        </div>
+    </div>
+    <p class="task-text">
+        Огибающая семейства поверхностей, конечно, естественно трансформирует интеграл по бесконечной области. Однако не все знают, что ортогональный определитель правомочен. Функция B(x,y) поддерживает интеграл от функции комплексной переменной, откуда следует доказываемое равенство.
+<br><br>Линейное уравнение категорически масштабирует линейно зависимый критерий сходимости Коши, что неудивительно. Геометрическая прогрессия, как следует из вышесказанного, детерменирована. Интеграл Гамильтона оправдывает интеграл от функции, имеющий конечный разрыв. По сути, прямоугольная матрица оправдывает аксиоматичный интеграл от функции, обращающейся в бесконечность вдоль линии, при этом, вместо 13 можно взять любую другую константу.
+    </p>
+</div>
+                </div>
+            </section>
+            <div class="modal md-effect-8 md-modal">
+    <div class="modal-content md-content">
+        <h2 class="modal__title">Создание задачи</h2>
+        <form action="" class="modal-form">
+            <div class="modal-form__name">
+                <label for="#task_name">Название</label>
+                <div class="modal-form__input">
+                    <input id="task_name" type="text" placeholder="Сходить в магазин">
+                </div>
+            </div>
+
+            <div class="modal-form__deadline">
+                <label for="#task_deadline">Дедлайн</label>
+                <div class="input">
+                    <input id="task_deadline" type="datetime">
+                </div>
+            </div>
+
+            <div class="modal-form__priority">
+                <label for="#task_priority">Приоритет</label>
+                <div class="input">
+                    <input id="task_priority" type="text">
+                </div>
+            </div>
+
+            <div class="modal-form__mark">
+                <label for="#task_mark">Метка</label>
+                <div class="input">
+                    <input id="task_mark" type="text" placeholder="Сходить в магазин">
+                </div>
+            </div>
+
+            <div class="modal-form__desc">
+                <label for="#task_desc">Описание</label>
+                <div class="input">
+                    <input id="task_desc" type="text" placeholder="Задача">
+                </div>
+            </div>
+        </form>
+        <div class="modal-btns">
+            <button class="modal__cancel">Отменить</button>
+            <button class="modal__create">Создать</button>
+        </div>
+        <div class="modal__close">
+            
+        </div>
+    </div>
+</div>
+           
+            <div class="overlay"></div>
+        </div>
+    </main>
+   
+    <script src="static/js/script.js"></script>
+</body>
+</html>
