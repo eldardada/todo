@@ -1,6 +1,7 @@
 <div class="todo">
     <table class="todo-list todo__list">
         <tr class="todo__row">
+            <th></th>
             <th>Название</th>
             <th>Дедлайн</th>
             <th>Приоритет</th>
@@ -8,66 +9,36 @@
         </tr>
         <tr class="todo__row">
             <td>
-                <label class="todo-task">
-                    <span class="todo-check">
+                <div class="todo-check">
+                    <label>
                         <input type="checkbox">
-                        <span></span>
-                    </span>
-                    <div class="todo-task__text">
-                        <h3 class="todo-task__title todo-task-title">Сходить в магазин</h3>
-                        <p class="todo-task__subtitle todo-task-subtitle">Купить следующий список продуктов: Молоко, огурцы, рыбу...</p>
-                    </div>
-                </label>
+                    </label>
+                    <span></span>
+                </div>
             </td>
-            <td>29.09.2020</td>
-            <td>Высокий</td>
             <td>
-                <svg class="pen">
+                <div class="todo-task">
+                    <h3 class="todo-task__title">Сходить в магазин</h3>
+                    <p class="todo-task__subtitle">Купить следующий список продуктов: Молоко, огурцы, рыбу...</p>
+                </div> 
+            </td>
+            <td>
+                <time class="todo__time" datetime="2020-09-29 18:32">
+                    <strong>29.09.2020</strong>
+                    <small>18:32</small>
+                </time>
+            </td>
+            <td>
+                <span class="todo__priority">
+                    Высокий
+                </span>
+            </td>
+            <td>
+                <svg class="pen" data-modal="modal_edit">
                     <use xlink:href="./static/img/svg/sprite.svg#pen"></use>
                 </svg>
             </td>
         </tr>
-        <tr class="todo__row">
-            <td>
-                <label class="todo-task">
-                    <span class="todo-check">
-                        <input type="checkbox">
-                        <span></span>
-                    </span>
-                    <div class="todo-task__text">
-                        <h3 class="todo-task__title todo-task-title">Сходить в магазин</h3>
-                        <p class="todo-task__subtitle todo-task-subtitle">Купить следующий список продуктов: Молоко, огурцы, рыбу...</p>
-                    </div>
-                </label>
-            </td>
-            <td>29.09.2020</td>
-            <td>Высокий</td>
-            <td>
-                <svg class="pen">
-                    <use xlink:href="./static/img/svg/sprite.svg#pen"></use>
-                </svg>
-            </td>
-        </tr>
-        <tr class="todo__row">
-            <td>
-                <label class="todo-task">
-                    <span class="todo-check">
-                        <input type="checkbox">
-                        <span></span>
-                    </span>
-                    <div class="todo-task__text">
-                        <h3 class="todo-task__title todo-task-title">Сходить в магазин</h3>
-                        <p class="todo-task__subtitle todo-task-subtitle">Купить следующий список продуктов: Молоко, огурцы, рыбу...</p>
-                    </div>
-                </label>
-            </td>
-            <td>29.09.2020</td>
-            <td>Высокий</td>
-            <td>
-                <svg class="pen">
-                    <use xlink:href="./static/img/svg/sprite.svg#pen"></use>
-                </svg>
-            </td>
-        </tr>
+        
     </table>
 </div>

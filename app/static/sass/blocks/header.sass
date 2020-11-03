@@ -8,12 +8,22 @@
 
 .add
     cursor: pointer
+    box-sizing: border-box
     height: 50px
     width: 50px
     border-radius: 50px
-    line-height: 60px
+    display: flex
+    align-items: center
+    justify-content: center
     text-align: center
+    border: 1px solid #E0E0E0
     background-color: var(--color-light)
+    +md-block
+        width: 30px
+        height: 30px
+        .plus
+            width: 20px
+            height: 20px
     &:hover .plus
         fill: var(--color-orange)
         

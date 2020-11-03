@@ -4,18 +4,19 @@ body
     font-family: '#{$mainFont}', sans-serif
     font-weight: $bodyFw
     background-color: var(--color-white)
+
 .plus
-    width: 20px
-    height: 20px
+    width: 30px
+    height: 30px
     fill: var(--color-gray)
     transition: fill .3s
 
 h1
-    font-weight: 900
-    font-size: 48px
+    font-weight: 700
     line-height: 56px
     color: var(--color-light)
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1)
+    +font(48, 24)
 
 .arrow_down
     height: 12px
@@ -24,11 +25,13 @@ h1
     width: 12px
     height: 21px
 
-
 .section
     background-color: rgba(0, 0, 0, 0.06)
+    height: calc(100vh - 82px)
     &__content
         padding: 20px
+        +md-block
+            padding: 10px 10px
     
 .back
     cursor: pointer
@@ -64,15 +67,36 @@ h1
 .title
     height: 28px
     font-weight: 500
-    font-size: 24px
     line-height: 28px
     color: #333333
-
+    +font(24,12)
 .block-color_sm
     background: #F2C94C
     border-radius: 5px
     width: 42px
     height: 21px
+    +md-block
+        width: 30px
+        height: 10px
 
+.close
+    width: 24px
+    height: 24px
+
+.round-color
+    min-width: 20px
+    height: 20px
+    border-radius: 20px
+    background-color: #F2C94C
+
+
+.calendar
+    width: 30px
+    height: 30px
+
+.error
+    outline: 1px solid red
+
+    
 
     

@@ -1,48 +1,130 @@
-<div class="modal md-effect-8 md-modal">
+<div class="modal modal_add md-effect-8 md-modal">
     <div class="modal-content md-content">
         <h2 class="modal__title">Создание задачи</h2>
-        <form action="" class="modal-form">
+        <form method="POST" class="modal-form modal__form">
             <div class="modal-form__name">
-                <label for="#task_name">Название</label>
-                <div class="modal-form__input">
-                    <input id="task_name" type="text" placeholder="Сходить в магазин">
+                <p>Название</p>
+                <div class="input">
+                    <input type="text" placeholder="Сходить в магазин" data-validate>
                 </div>
             </div>
 
             <div class="modal-form__deadline">
-                <label for="#task_deadline">Дедлайн</label>
+                <p>Дедлайн</p>
                 <div class="input">
-                    <input id="task_deadline" type="datetime">
+                    <input name="task_deadline" placeholder="29.09.2021, 18:32" type="text">
+                    <svg class="calendar">
+                        <use xlink:href="./static/img/svg/sprite.svg#calendar"></use>
+                    </svg>
                 </div>
             </div>
 
             <div class="modal-form__priority">
-                <label for="#task_priority">Приоритет</label>
-                <div class="input">
-                    <input id="task_priority" type="text">
+                <p>Приоритет</p>
+                <div class="input" data-nested="">
+                    <input name="task_priority" value="Высокий" type="text" data-title="" readonly>
+                    <ul class="input__nested">
+                        <li>Высокий</li>
+                        <li>Средний</li>
+                        <li>низкий</li>
+                    </ul>
+                    <svg class="arrow_down">
+                        <use xlink:href="./static/img/svg/sprite.svg#arrow_down"></use>
+                    </svg>
                 </div>
             </div>
 
             <div class="modal-form__mark">
-                <label for="#task_mark">Метка</label>
+                <p>Метка</p>
                 <div class="input">
-                    <input id="task_mark" type="text" placeholder="Сходить в магазин">
+                    <span class="round-color"></span>
+                    <input name="task_mark" type="text" value="#F2C94C">
                 </div>
             </div>
 
             <div class="modal-form__desc">
-                <label for="#task_desc">Описание</label>
+                <p>Описание</p>
                 <div class="input">
-                    <input id="task_desc" type="text" placeholder="Задача">
+                    <textarea></textarea>
                 </div>
             </div>
+            <div class="modal-form__btns">
+                <button type="reset" class="modal__cancel">Отменить</button>
+                <button type="submit" class="modal__success">Создать</button>
+            </div>
+            <button class="modal__reset" type="reset">
+                <svg class="modal__basket">
+                    <use xlink:href="./static/img/svg/sprite.svg#basket"></use>
+                </svg>
+            </button>
         </form>
-        <div class="modal-btns">
-            <button class="modal__cancel">Отменить</button>
-            <button class="modal__create">Создать</button>
-        </div>
-        <div class="modal__close">
-            
-        </div>
+       
+        <svg class="close modal__close">
+            <use xlink:href="./static/img/svg/sprite.svg#close"></use>
+        </svg>
+        
+    </div>
+</div>
+
+<div class="modal modal_edit md-effect-8 md-modal md-show">
+    <div class="modal-content md-content">
+        <h2 class="modal__title">Редактирование задачи</h2>
+        <form method="POST" class="modal-form modal__form">
+            <div class="modal-form__name">
+                <p>Название</p>
+                <div class="input">
+                    <input type="text" placeholder="Сходить в магазин" data-validate>
+                </div>
+            </div>
+
+            <div class="modal-form__deadline">
+                <p>Дедлайн</p>
+                <div class="input">
+                    <input name="task_deadline" placeholder="29.09.2021, 18:32" type="text" data-mark>
+                    <svg class="calendar">
+                        <use xlink:href="./static/img/svg/sprite.svg#calendar"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="modal-form__priority">
+                <p>Приоритет</p>
+                <div class="input" data-nested="">
+                    <input name="task_priority" value="Высокий" type="text" data-title="" readonly>
+                    <ul class="input__nested">
+                        <li>Высокий</li>
+                        <li>Средний</li>
+                        <li>низкий</li>
+                    </ul>
+                    <svg class="arrow_down">
+                        <use xlink:href="./static/img/svg/sprite.svg#arrow_down"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="modal-form__mark">
+                <p>Метка</p>
+                <div class="input">
+                    <span class="round-color"></span>
+                    <input name="task_mark" type="text" value="#F2C94C">
+                </div>
+            </div>
+
+            <div class="modal-form__desc">
+                <p>Описание</p>
+                <div class="input">
+                    <textarea></textarea>
+                </div>
+            </div>
+            <div class="modal-form__btns">
+                <button type="reset" class="modal__cancel">Отменить</button>
+                <button type="submit" class="modal__success">Cохранить</button>
+            </div>
+        </form>
+       
+        <svg class="close modal__close">
+            <use xlink:href="./static/img/svg/sprite.svg#close"></use>
+        </svg>
+        
     </div>
 </div>

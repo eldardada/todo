@@ -1,4 +1,7 @@
 .todo
+    padding-top: 40px
+    +md-block
+        padding-top: 0
     &-list
         width: 100%
         text-align: left
@@ -6,49 +9,30 @@
         > td, th
             padding: 20px 0
             vertical-align: middle
+            +md-block
+                padding: 10px 0
+            &:not(:last-child)
+                padding-right: 10px
+                +md-block
+                    padding-right: 5px
             &:last-child
                 text-align: right
         th
             font-weight: 500
-            font-size: 18px
+            +font(18, 10)
         &:not(:last-child)
             border-bottom: 1px solid #C4C4C4
-    &-task
-        display: flex
-        cursor: pointer
-        user-select: none
-        input
-            position: absolute
-            appearance: none
-            &:focus
-                outline: none
-            &::after
-                content: ''
-                cursor: pointer
-                display: block
-                box-sizing: border-box
-                width: 24px
-                height: 24px
-                border-radius: 24px
-                border: 3px solid #333
-            &:checked
-                &::after
-                    border: none
-                    content: url(static/img/checkbox-active.svg)
-            + span
-                margin-top: 30px
-                width: 24px
-                height: 8px
-                background-color: #EB5757
-                border-radius: 4px
-        &__text
-            margin-left: 20px
-
-    &-check
+    &__time
         display: flex
         flex-direction: column
-        align-items: center
-
+        > strong
+            +font(18, 10)
+            margin-bottom: 5px
+        > small
+            color: #828282
+            +font(14, 10)
+    &__priority
+        +font(18, 12)
 .pen
     width: 20px
     height: 20px
@@ -60,8 +44,9 @@
 .todo-task
     &__title
         display: inline-block
+        cursor: pointer
         font-weight: 500
-        font-size: 18px
+        +font(18, 12)
         margin-bottom: 10px
         &::after
             content: ''
@@ -69,9 +54,54 @@
             background-color: var(--color-black)
             height: 1px
             width: 100%
+    &__check
+        margin-right: 20px
     &__subtitle
-        font-size: 14px
+        +font(14, 10)
         color: #828282
+        white-space: nowrap
+        max-width: 590px
+        overflow: hidden
+        text-overflow: ellipsis
+        +md-block
+            max-width: 250px
+        +sm-block
+            max-width: 180px
+        +xs-block
+            max-width: 120px
+
+.todo-check
+    display: flex
+    flex-direction: column
+    input
+        position: absolute
+        appearance: none
+        &:focus
+            outline: none
+        &::after
+            content: ''
+            cursor: pointer
+            display: block
+            box-sizing: border-box
+            width: 24px
+            height: 24px
+            border-radius: 24px
+            border: 3px solid #333
+            margin-left: auto
+        &:checked
+            &::after
+                border: none
+                content: url(static/img/checkbox-active.svg)
+    > span
+        display: block
+        width: 24px
+        height: 8px
+        margin-top: 30px
+        background-color: #EB5757
+        border-radius: 4px
+        margin-left: 4px
+        margin-top: 30px
+
 
 
 

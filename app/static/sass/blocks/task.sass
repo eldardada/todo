@@ -2,6 +2,9 @@
     padding-top: 40px
     display: grid
     grid-row-gap: 20px
+    display: none
+    +md-block
+        padding-top: 0
     &-header
         display: flex
         justify-content: space-between
@@ -14,22 +17,81 @@
         margin-right: 20px
         padding-right: 20px 
         border-right: 1px solid #C4C4C4
+        +md-block
+            padding-right: 15px
+            margin-right: 5px
     &-info
         background-color: #fff
         border-radius: 10px
         display: flex
         padding: 20px 40px
+        +bp960-block
+            flex-wrap: wrap
+        +md-block
+            position: absolute
+            top: 70px
+            left: 0
+            right: 0
+            border-radius: 0
+            padding: 8px 0
         &__block
             display: flex
             flex-direction: column
-            padding-right: 40px
-            margin-right: 40px
+            &.check
+                .check_mark
+                    display: none
+                +md-block
+                    flex-direction: row
+                    justify-content: center
+                    .check_mark
+                        display: block
+                        margin-right: 8px
+            > div
+                display: flex
+                flex-direction: column
+                +md-block
+                    align-items: center
+            +bp960-block
+                flex-basis: 50%
+                align-items: center
+                &:nth-child(-n+2)
+                    padding-bottom: 8px
+                    border-bottom: 1px solid #F2F2F2
+                &:not(:nth-child(-n+2))
+                    padding-top: 8px
             &:not(:last-child)
                 border-right: 1px solid #C4C4C4
-            > small
+                padding-right: 40px
+                margin-right: 40px
+                +bp960-block
+                    padding-right: 0
+                    margin-right: 0
+                    border-right: none
+            small
                 color: #828282
-                font-size: 14px
                 margin-bottom: 8px
-            > strong
-                font-size: 21px
+                +font(14, 10)
+            strong
+                +font(21, 12)
+    &-text
+        +font(18, 12)
+        +md-block
+            margin-top: 100px
+    &__btn
+        @media screen and ( max-width: 850px )
+            padding: 0
+            width: 40px
+            height: 40px
+            svg
+                width: 20px
+                height: 20px
+
+.task-header
+    .main-btn 
+        span
+            @media screen and ( max-width: 850px )
+                display: none
+        svg
+            margin: 0 auto
+        
         

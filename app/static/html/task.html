@@ -9,30 +9,36 @@
             <h2 class="title task__title">Сходить в магазин</h2>
         </div>
         <div class="task-header__right">
-            <button class="main-btn">
+            <button class="task__btn main-btn">
                 <svg class="main-btn__svg check_mark">
                     <use xlink:href="./static/img/svg/sprite.svg#checkbox-active"></use>
                 </svg>
                 <span>Выполнена</span>
             </button>
-            <button class="main-btn">
+            <button class="task__btn main-btn">
                 <svg class="main-btn__svg check_mark">
                     <use xlink:href="./static/img/svg/sprite.svg#basket"></use>
                 </svg>
-                <span>Выполнена</span>
+                <span>Удалить</span>
             </button>
-            <button class="main-btn">
+            <button class="task__btn main-btn" data-modal="modal_edit">
                 <svg class="main-btn__svg check_mark">
                     <use xlink:href="./static/img/svg/sprite.svg#pen"></use>
                 </svg>
-                <span>Выполнена</span>
+                <span>Редактировать</span>
             </button>
         </div>
     </div>
     <div class="task-info">
-        <div class="task-info__block">
-            <small>Статус задачи</small>
-            <strong>Выполнена</strong>
+        <div class="task-info__block check">
+            <svg class="check_mark">
+                <use xlink:href="./static/img/svg/sprite.svg#checkbox-active"></use>
+            </svg>
+            <div>
+                <small>Статус задачи</small>
+                <strong>Выполнена</strong>
+            </div>
+            
         </div>
         <div class="task-info__block">
             <small>Приоритет</small>

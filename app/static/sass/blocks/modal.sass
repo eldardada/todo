@@ -1,6 +1,6 @@
 .modal
     display: flex
-    // visibility: hidden
+    visibility: hidden
     position: fixed
     top: 0px
     left: 0px
@@ -9,32 +9,188 @@
     z-index: 1000
     overflow: auto
     padding: 10px
+    &.active
+	    visibility: visible
+    &.active ~ .overlay
+	        opacity: 1
+	        visibility: visible
     &-content
+        display: flex
+        flex-direction: column
         position: relative
         width: 1120px
-        max-width: 80%
+        max-width: 90%
         grid-gap: 20px
         border-radius: 20px
-        background-color: var(--color-white)
+        background-color: #F2F2F2
         padding: 20px 40px
         margin: auto auto
         +sm-block
             padding: 15px
+    .input
+        background: #FFFFFF
+        border-radius: 10px
+        padding: 10px 15px
+        > input, textarea
+            border: none
+            width: 100%
+            &:focus
+                outline: none
+        > textarea
+            resize: none
+    &__form
+        margin-bottom: 20px
     &-form
         display: grid
         grid-template-columns: repeat(1fr, 3)
         grid-template-rows: repeat(1fr, 3)
+        grid-column-gap: 20px
         grid-row-gap: 10px
+        input, textarea
+            font-size: 18px
+        p
+            color: #4F4F4F
+            font-size: 14px
         &__name
             grid-column: 1/4
+        &__priority
+            cursor: pointer
+            text-transform: capitalize
+            .input
+                position: relative
+                input
+                    cursor: pointer
+                    text-transform: capitalize
+                &__nested
+                    position: absolute
+                    top: calc(100% - 3px)
+                    left: 0
+                    background-color: #fff
+                    width: 100%
+                    transform: scaleY(0)
+                    transition: transform .3s
+                    transform-origin: top
+                    > li
+                        padding: 5px 10px
+                        background-color: #F2F2F2
+                        &:not(:last-child)
+                            border-bottom: 1px solid #858585
+                &.active
+                    .input__nested
+                        transform: scaleY(1)
         &__priority, &__mark, &__deadline
             grid-row: 2/3
+            .input
+                display: flex
+                align-items: center
+                height: 40px
+                padding: 0 10px
+                font-size: 18px
+        &__deadline
+            +bp820-block
+                grid-column: 1/4
+                grid-row: 2/3
+        &__priority
+            +bp820-block
+                grid-column: 1/4
+                grid-row: 3/4
+        &__mark
+            +bp820-block
+                grid-column: 1/4
+                grid-row: 4/5
         &__desc
             grid-row: 3/4
-            grid-column: 1/3
+            grid-column: 1/4
+            padding-bottom: 40px
+            border-bottom: 1px solid #E0E0E0
+            +bp820-block
+                grid-column: 1/4
+                grid-row: 5/6
+            textarea
+                height: 124px
+        &__mark
+            .input
+                display: flex
+                > span
+                    margin-right: 10px
+        &__btns
+            grid-column: 1/4
+            margin-top: 10px
+            justify-self: end
+        p
+            display: inline-block
+            margin-bottom: 10px
     &__title
         text-align: center
-        font-size: 36px
+        +font(36, 18)
+    &__close
+        position: absolute
+        cursor: pointer
+        top: 25px
+        right: 40px
+        transition: fill .3s
+        +sm-block
+        
+            right: 15px
+            top: 20px
+        &:hover
+            fill: var(--color-orange)
+    &__btns
+        margin-left: auto
+    &__cancel
+        border: none
+        background-color: transparent
+    &__success
+        border: 1px solid #828282
+        border-radius: 5px
+        padding: 5px 10px
+    &__success, &__cancel
+        cursor: pointer
+        transition: color .3s
+        &:hover
+            color: var(--color-orange)
+    &__reset
+        position: absolute
+        bottom: 30px
+        left: 30px
+        padding: 0
+        background-color: transparent
+        border: none
+        &:focus
+            outline: none
+    &__basket
+        width: 18px
+        height: 24px
+        cursor: pointer
+        transition: fill .3s
+        &:hover
+            fill: var(--color-orange)
 
 
+.md-effect-8.md-modal
+    perspective: 1300px
+
+.md-effect-8 .md-content 
+    transform-style: preserve-3d
+    transform: rotateY(-70deg)
+    transition: all 0.3s
+    opacity: 0
+
+.active.md-effect-8 .md-content 
+    transform: rotateY(0deg)
+    opacity: 1
+
+
+.md-overlay 
+	position: fixed
+	width: 100%
+	visibility: hidden
+    overflow: auto
+	top: 0
+	left: 0
+    bottom: 0
+	z-index: 900
+	opacity: 0
+	background-color: rgba(#000, 0.7)
+	transition: opacity .3s
 

@@ -1,36 +1,41 @@
 .aside
     padding: 60px 25px
     background-color:#E6E6E6
-    min-height: calc(100vh - 202px)
     user-select: none
     +md-block
         z-index: 100
-        position: absolute
+        position: fixed
         width: 81.25%
-        min-height: calc(100% + 22px)
         transform: translateX(-1000px)
         transition: transform .3s
+        top: 82px
+        bottom: 0
     &__list-type
         margin-bottom: 20px
     &.active
         transform: translateX(0)
-
     &.active ~ .overlay
         opacity: 1
         visibility: visible
 .overlay
     position: absolute
     background-color: rgba(0,0,0,0.4)
-    min-height: calc(100vh - 82px)
     width: 100%
     opacity: 0
+    top: 0
+    bottom: 0
     visibility: hidden
     transition: opacity .3s
-    +md-block
-        height: 927px
 .list-type
     > li
         padding: 10px 0
+        border-radius: 5px
+        transition: background-color .3s
+        &:hover
+            background-color: #F2F2F2
+            input:not(:checked)
+                &::after
+                    background-color: #000
     &__check
         display: flex
         align-items: center
@@ -48,6 +53,7 @@
                 height: 24px
                 border-radius: 24px
                 border: 1px solid #333
+                transition:  background-color .3s
             &:checked
                 &::after
                     border: none
